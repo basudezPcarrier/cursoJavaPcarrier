@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Configuration MonitoringInterval="30">
+	
+	<appenders>
+
+		<Console name ="STDOUT" target="SYSTEM_OUT">
+			<PatternLayout pattern="%d %-5p [%c] %C{2} [%t]: %m%n"/>
+		</Console>
+		
+		<File name="Alllogger" filename="C:/alllog.log" append="false">
+			<PatternLayout pattern="%d %-5p [%c] %C{2} [%t]: %m%n"/>
+		</File>>
+
+		<File name="FileLoggerEntidades" filename="C:/alllogEntidades.log" append="false">
+			<PatternLayout pattern="%d %-5p [%c] %C{2} [%t]: %m%n"/>
+		</File>>
+		
+		<File name="FileLoggerEntidadesDebug" filename="C:/alllogEntidadesDebug.log" append="false">
+			<PatternLayout pattern="%d %-5p [%c] %C{2} [%t]: %m%n"/>
+			<ThresholdFilter level="debug" onMatch="DENY" onMismatch="ACCEPT"/>
+		</File>>
+
+	</appenders>>
+	
+	<Loggers>
+
+		<Root level="warn">
+			<AppenderRef ref ="STDOUT" />
+			<AppenderRef ref ="Alllogger" />
+		</Root>>
+		
+		<logger name="com.wpsnetwork.entidades" level="trace">
+			<AppenderRef ref ="STDOUT" />
+		</logger>>
+
+	</Loggers>>
+	
+</Configuration>
