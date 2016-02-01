@@ -191,6 +191,8 @@ public class Consola {
 		
 		// agrupar por edades (haremos un mapa para agrupas personas segun su edad)
 		
+		System.out.println("Ejemplo grouping" );
+
 		Map<Integer, List<Persona>> mapa = personas.stream()
 				                                    .collect(Collectors.groupingBy(Persona::getEdad));
 		
@@ -202,6 +204,33 @@ public class Consola {
 				System.out.println("    Nombre: " + p.getNombre());
 			}
 		}
+		
+		// Ejemplo particionar: crear dos grupos, uno para personas edad > 30 y otro para personas edad <= 30
+		
+		System.out.println("Ejemplo partition" );
+		
+		Map<Boolean,List<Persona>> mapa2 = personas
+				                          .stream()
+				                          .collect(Collectors.partitioningBy(p -> p.getEdad()<= 30 )) ;
+		
+		for(boolean cond : mapa2.keySet()) {
+			System.out.println("Condicion : " + cond );
+			
+			for (Persona p : mapa2.get(cond)){
+				System.out.println("    Nombre: " + p.getNombre());
+			}
+		}
+		
+		// Obtener todos los nombres en un unico string (concatenar los nombres)
+
+		System.out.println("Ejemplo concatenar" );
+		
+		String nombresConcat = personas.stream().map(Persona::getNombre).collect(Collectors.joining("--")) ;
+		// --> hace el map para que para cada Persona haga el getNombre
+		
+		
+		System.out.println("Nombres: " + nombresConcat );
+	
 	}
 
 }
