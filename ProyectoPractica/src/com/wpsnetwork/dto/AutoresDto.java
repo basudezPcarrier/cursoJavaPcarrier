@@ -18,6 +18,8 @@ public class AutoresDto {
 		
 		// inicializar el tipo Autor y asignar a las variables del paquete
 		Autor autor = new Autor();
+		
+		// creo que lo siguiente esta mal
 		autor = (Autor) FactoriaDao.getObjetoDao(tipoAcceso, Objetos.AUTOR) ;
 		
 		setId(autor.getId()) ;

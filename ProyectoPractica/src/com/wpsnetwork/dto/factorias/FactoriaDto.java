@@ -1,22 +1,15 @@
 package com.wpsnetwork.dto.factorias;
 
+import com.wpsnetwork.dao.enumerados.Objetos;
 import com.wpsnetwork.dto.entidades.Autor;
 import com.wpsnetwork.dto.entidades.CategoriaLibro;
 import com.wpsnetwork.dto.entidades.Libro;
 import com.wpsnetwork.dto.entidades.Persona;
 import com.wpsnetwork.dto.entidades.Prestamo;
-import com.wpsnetwork.dao.enumerados.Objetos;
-import com.wpsnetwork.interfaces.Dao;
 
 public abstract class FactoriaDto {
-	
-	public abstract Autor Autor();
-	public abstract CategoriaLibro CategoriaLibro();
-	public abstract Libro Libro();
-	public abstract Persona Persona();
-	public abstract Prestamo Prestamo();
-	
-	public static <Dto> Dto getFactoriaDao (String tipoAcceso , Objetos tipoObjeto){
+		
+	public static <Dto> Dto FactoriaDto (String tipoAcceso , Objetos tipoObjeto){
 		
 		Dto r = null ;
 		
