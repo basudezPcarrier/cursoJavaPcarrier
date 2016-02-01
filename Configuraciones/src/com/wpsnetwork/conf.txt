@@ -1,0 +1,3 @@
+usuario=Pepito
+edad=25
+fichero=txt
