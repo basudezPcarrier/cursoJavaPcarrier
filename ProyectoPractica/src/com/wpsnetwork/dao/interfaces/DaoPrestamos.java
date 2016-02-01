@@ -1,4 +1,4 @@
-package com.wpsnetwork.interfaces;
+package com.wpsnetwork.dao.interfaces;
 
 import com.wpsnetwork.dao.entidades.Prestamo;
 
