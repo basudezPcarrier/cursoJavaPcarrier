@@ -16,15 +16,14 @@ public class AutoresDto {
 
 	public AutoresDto( String tipoAcceso ) {
 		
+		super() ;
+		
 		// inicializar el tipo Autor y asignar a las variables del paquete
 		Autor autor = new Autor();
 		
 		// creo que lo siguiente esta mal
 		autor = (Autor) FactoriaDao.getObjetoDao(tipoAcceso, Objetos.AUTOR) ;
 		
-		setId(autor.getId()) ;
-		setNombre(autor.getNombre()) ;
-
 		// inicializar todos los libros y luego filtrar por los del autor
 		
 		List<com.wpsnetwork.dto.entidades.Libro> totallibros = FactoriaDao.getObjetoDao(tipoAcceso, Objetos.LIBRO).getAll();

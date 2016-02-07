@@ -2,7 +2,7 @@ package com.wpsnetwork.dto.factorias;
 
 import com.wpsnetwork.dao.enumerados.Objetos;
 import com.wpsnetwork.dto.entidades.Autor;
-import com.wpsnetwork.dto.entidades.CategoriaLibro;
+import com.wpsnetwork.dto.entidades.Categoria;
 import com.wpsnetwork.dto.entidades.Libro;
 import com.wpsnetwork.dto.entidades.Persona;
 import com.wpsnetwork.dto.entidades.Prestamo;
@@ -24,7 +24,7 @@ public abstract class FactoriaDto {
 				case PRESTAMO:
 					r = (Dto) new Prestamo() ;
 				case CATEGORIA:
-					r = (Dto) new CategoriaLibro() ;
+					r = (Dto) new Categoria() ;
 			}
 		
 		return r ;

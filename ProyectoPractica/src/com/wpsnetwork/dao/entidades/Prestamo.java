@@ -1,19 +1,21 @@
 package com.wpsnetwork.dao.entidades;
 
-import java.util.Date;
+import java.time.LocalDate;
+
 
 public class Prestamo {
 
 	private int id ;
-	private Date fechaInicio ;
-	private Date fechaFin ;
+	private LocalDate fechaInicio ;
+	private LocalDate fechaFin ;
 	private boolean devuelto ;
 	private int libro;
 	private int persona;
+	
 	public Prestamo() {
 		super();
 	}
-	public Prestamo(int id, Date fechaInicio, Date fechaFin, boolean devuelto, int libro, int persona) {
+	public Prestamo(int id, LocalDate fechaInicio, LocalDate fechaFin, boolean devuelto, int libro, int persona) {
 		super();
 		this.id = id;
 		this.fechaInicio = fechaInicio;
@@ -25,10 +27,10 @@ public class Prestamo {
 	public int getId() {
 		return id;
 	}
-	public Date getFechaInicio() {
+	public LocalDate getFechaInicio() {
 		return fechaInicio;
 	}
-	public Date getFechaFin() {
+	public LocalDate getFechaFin() {
 		return fechaFin;
 	}
 	public boolean isDevuelto() {
@@ -43,10 +45,10 @@ public class Prestamo {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public void setFechaInicio(Date fechaInicio) {
+	public void setFechaInicio(LocalDate fechaInicio) {
 		this.fechaInicio = fechaInicio;
 	}
-	public void setFechaFin(Date fechaFin) {
+	public void setFechaFin(LocalDate fechaFin) {
 		this.fechaFin = fechaFin;
 	}
 	public void setDevuelto(boolean devuelto) {

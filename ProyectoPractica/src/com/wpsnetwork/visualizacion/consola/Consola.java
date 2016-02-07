@@ -15,8 +15,8 @@ public class Consola {
 		
 		// inicializar 
 		
-		autor.setId(1);
-		autor.setNombre("Paco Umbral");
+//		autor.setId(1);
+//		autor.setNombre("Paco Umbral");
 		autor.setLibros(null);
 		
 		// 

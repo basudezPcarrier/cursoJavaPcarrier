@@ -3,7 +3,6 @@ package com.wpsnetwork.dao.memoria;
 import java.util.ArrayList;
 import java.util.List;
 
-
 import com.wpsnetwork.dao.entidades.CategoriaLibro;
 import com.wpsnetwork.dao.interfaces.DaoCategoriasLibros;
 
@@ -57,7 +56,8 @@ public class RepositorioCategoriasLibrosMemoriaDao implements DaoCategoriasLibro
 	public void update(CategoriaLibro obj) {
 		for (CategoriaLibro a : listaCategoriaLibros ){
 			if  (a.equals(obj)){
-				a.setNombre(obj.getNombre());
+				a.setIdCategoria(obj.getIdCategoria());
+				a.setIdLibro(obj.getIdLibro());
 			}
 		}
 	}
@@ -69,7 +69,8 @@ public class RepositorioCategoriasLibrosMemoriaDao implements DaoCategoriasLibro
 
 	@Override
 	public List<CategoriaLibro> getAll() {
-		return listaCategoriaLibros ;
+		return listaCategoriaLibros;
 	}
+	
 
 }

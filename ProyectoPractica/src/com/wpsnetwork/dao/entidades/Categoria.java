@@ -1,40 +1,28 @@
-package com.wpsnetwork.dto.entidades;
+package com.wpsnetwork.dao.entidades;
 
-import java.util.List;
-
-public class CategoriaLibro {
+public class Categoria {
 
 	private int id;
 	private String nombre ;
-	private List<com.wpsnetwork.dto.entidades.Libro> libros;
-
-	public CategoriaLibro() {
+	public Categoria() {
 		super();
 	}
-	public CategoriaLibro(int id, String nombre, List<Libro> libros) {
+	public Categoria(int id, String nombre) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
-		this.libros = libros;
 	}
-	
 	public int getId() {
 		return id;
 	}
 	public String getNombre() {
 		return nombre;
 	}
-	public List<com.wpsnetwork.dto.entidades.Libro> getLibros() {
-		return libros;
-	}
 	public void setId(int id) {
 		this.id = id;
 	}
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
-	}
-	public void setLibros(List<com.wpsnetwork.dto.entidades.Libro> libros) {
-		this.libros = libros;
 	}
 	@Override
 	public String toString() {
@@ -55,10 +43,13 @@ public class CategoriaLibro {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		CategoriaLibro other = (CategoriaLibro) obj;
+		Categoria other = (Categoria) obj;
 		if (id != other.id)
 			return false;
 		return true;
 	}
-
+	
+	
+	
+	
 }

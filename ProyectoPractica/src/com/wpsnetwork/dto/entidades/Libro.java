@@ -4,81 +4,44 @@ import java.util.List;
 
 public class Libro {
 
-	private int id;
-	private String titulo ;
-	private int paginas ;
-	private String editorial ;
-	private String edicion ;
+	private com.wpsnetwork.dao.entidades.Libro libroDao ;
 
 	private List<com.wpsnetwork.dto.entidades.Autor> autores ;
-	private List<com.wpsnetwork.dto.entidades.CategoriaLibro> categorias ;
-
-	public Libro() {
+	private List<com.wpsnetwork.dto.entidades.Categoria> categorias ;
+	public Libro(com.wpsnetwork.dao.entidades.Libro libroDao, List<Autor> autores, List<Categoria> categorias) {
 		super();
-	}
-	public Libro(int id, String titulo, int paginas, String editorial, String edicion, List<Autor> autores,
-			List<CategoriaLibro> categorias) {
-		super();
-		this.id = id;
-		this.titulo = titulo;
-		this.paginas = paginas;
-		this.editorial = editorial;
-		this.edicion = edicion;
+		this.libroDao = libroDao;
 		this.autores = autores;
 		this.categorias = categorias;
 	}
-	public int getId() {
-		return id;
+	public Libro() {
+		super();
 	}
-	public String getTitulo() {
-		return titulo;
-	}
-	public int getPaginas() {
-		return paginas;
-	}
-	public String getEditorial() {
-		return editorial;
-	}
-	public String getEdicion() {
-		return edicion;
+	public com.wpsnetwork.dao.entidades.Libro getLibroDao() {
+		return libroDao;
 	}
 	public List<com.wpsnetwork.dto.entidades.Autor> getAutores() {
 		return autores;
 	}
-	public List<com.wpsnetwork.dto.entidades.CategoriaLibro> getCategorias() {
+	public List<com.wpsnetwork.dto.entidades.Categoria> getCategorias() {
 		return categorias;
 	}
-	public void setId(int id) {
-		this.id = id;
-	}
-	public void setTitulo(String titulo) {
-		this.titulo = titulo;
-	}
-	public void setPaginas(int paginas) {
-		this.paginas = paginas;
-	}
-	public void setEditorial(String editorial) {
-		this.editorial = editorial;
-	}
-	public void setEdicion(String edicion) {
-		this.edicion = edicion;
+	public void setLibroDao(com.wpsnetwork.dao.entidades.Libro libroDao) {
+		this.libroDao = libroDao;
 	}
 	public void setAutores(List<com.wpsnetwork.dto.entidades.Autor> autores) {
 		this.autores = autores;
 	}
-	public void setCategorias(List<com.wpsnetwork.dto.entidades.CategoriaLibro> categorias) {
+	public void setCategorias(List<com.wpsnetwork.dto.entidades.Categoria> categorias) {
 		this.categorias = categorias;
-	}
-	@Override
-	public String toString() {
-		return "Libro [id=" + id + ", titulo=" + titulo + ", paginas=" + paginas + ", editorial=" + editorial
-				+ ", edicion=" + edicion + "]";
 	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + id;
+		result = prime * result + ((autores == null) ? 0 : autores.hashCode());
+		result = prime * result + ((categorias == null) ? 0 : categorias.hashCode());
+		result = prime * result + ((libroDao == null) ? 0 : libroDao.hashCode());
 		return result;
 	}
 	@Override
@@ -90,9 +53,24 @@ public class Libro {
 		if (getClass() != obj.getClass())
 			return false;
 		Libro other = (Libro) obj;
-		if (id != other.id)
+		if (autores == null) {
+			if (other.autores != null)
+				return false;
+		} else if (!autores.equals(other.autores))
+			return false;
+		if (categorias == null) {
+			if (other.categorias != null)
+				return false;
+		} else if (!categorias.equals(other.categorias))
+			return false;
+		if (libroDao == null) {
+			if (other.libroDao != null)
+				return false;
+		} else if (!libroDao.equals(other.libroDao))
 			return false;
 		return true;
 	}
+
+
 
 }
