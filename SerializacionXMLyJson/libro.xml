@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.8.0_25" class="java.beans.XMLDecoder">
+ <object class="com.wpsnetwork.entidades.Libro">
+  <void property="anyo">
+   <int>2010</int>
+  </void>
+  <void property="autor">
+   <string>Un autor</string>
+  </void>
+  <void property="codigo">
+   <int>1</int>
+  </void>
+  <void property="titulo">
+   <string>tit 1</string>
+  </void>
+ </object>
+</java>
