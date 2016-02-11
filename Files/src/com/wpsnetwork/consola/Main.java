@@ -2,6 +2,9 @@ package com.wpsnetwork.consola;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.FileVisitOption;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 public class Main {
 
@@ -47,6 +50,15 @@ public class Main {
 		if (!rutaFichero.exists())
 			try {
 				rutaFichero.createNewFile() ;
+				
+				// el Files.walk permite crear un Stream para "navegar por los ficheros y carpetas del
+				// disco duro.
+				
+				Files.walk(Paths.get("c:","windows"), FileVisitOption.FOLLOW_LINKS)
+					.filter(f -> Files.isReadable(f) && Files.isDirectory(f)) 
+					.forEach( f -> System.out.println(f));
+				
+				
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
