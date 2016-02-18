@@ -119,6 +119,23 @@ public class Main {
 			
 			System.out.println(clientes);
 			
+
+			
+			
+			// ejemplo de hacer una query
+			
+			sql = " SELECT ID , INFO FROM PEDIDO" ;
+			resultado = comando.executeQuery(sql) ;
+
+			// recorrer el conjunto de resultados (creamos una lista de Clientes y vamos a meter ahi directamente el restultado de la query)
+			
+			while ( resultado.next()){ // resultado.next() indica si existe el siguiente elemento o no
+				int id = resultado.getInt("id") ;
+				String nombre = resultado.getString("info") ;
+				
+				System.out.println("Resultado Pedido: " + id + " " + nombre );
+
+			}
 			
 			// evitar sql injection --> usar los PreparedStatement
 			
