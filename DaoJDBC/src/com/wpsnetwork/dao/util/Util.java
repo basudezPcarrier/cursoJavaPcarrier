@@ -5,8 +5,6 @@ import java.sql.SQLException;
 import java.util.Properties;
 import javax.sql.DataSource;
 
-import com.wpsnetwork.dao.repositorio.RepositorioClientesDao;
-
 import oracle.jdbc.pool.OracleDataSource;
 
 public class Util {
