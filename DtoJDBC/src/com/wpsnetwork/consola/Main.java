@@ -1,28 +1,32 @@
 package com.wpsnetwork.consola;
 
 import java.sql.SQLException;
+import java.time.LocalDateTime;
 import java.util.List;
 
-import com.wpsnetwork.dao.RepositorioClientesDao;
-import com.wpsnetwork.dao.RepositorioPedidosDao;
-import com.wpsnetwork.dao.entidades.Cliente;
-import com.wpsnetwork.dao.entidades.Pedido;
 import com.wpsnetwork.dao.interfaces.Dao;
+import com.wpsnetwork.dto.RepositorioClientesDto;
+import com.wpsnetwork.dto.entidades.Cliente;
+import com.wpsnetwork.dto.entidades.Pedido;
 
 public class Main {
 
-	public static void main(String[] args) throws SQLException  {
-		Dao<Cliente> repositorioCliente = new RepositorioClientesDao();
+	public static void main(String[] args) {
+		Dao<Cliente> clientes = new RepositorioClientesDto();
 		
-		List<Cliente> clientes = repositorioCliente.getAll();
-		System.out.println(clientes);
-		
-		
-		Dao<Pedido> repositorioPedidos = new RepositorioPedidosDao();
-		
-		List<Pedido> pedidos = repositorioPedidos.getAll();
-		System.out.println(pedidos);
-
+		try{
+			
+			List<Cliente> lista = clientes.getAll();
+			System.out.println(lista);
+			
+			//Obtenemos el cliente 2
+			Cliente c = clientes.get(2);
+			c.getPedidos().add(new Pedido(5, LocalDateTime.now(), "Pedido cliente 2", c));
+			clientes.update(c);
+			
+		}catch(SQLException ex){
+			System.out.println(ex.getMessage());
+		}
 	}
 
 }
