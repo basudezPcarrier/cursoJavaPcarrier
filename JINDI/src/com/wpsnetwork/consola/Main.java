@@ -1,12 +1,16 @@
 package com.wpsnetwork.consola;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.Properties;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
+import javax.sql.DataSource;
 
 import oracle.jdbc.pool.OracleDataSource;
 
@@ -84,6 +88,39 @@ public class Main {
 			// ver si existe un objeto en el JINDI. Si no existe, lanza una excepcion...pero tambien 
 			// podemos crearlo, y eso lo haremos en el catch
 			Object obj = ctx.lookup(DATASOURCE_NAME) ;
+			
+			
+			
+			
+			
+			
+			
+			
+			
+//			// suponiendo que ya he creado el ojbeto (A a mi me está fallando pot algún motivo)
+//			DataSource ds = (DataSource) ctx.lookup(DATASOURCE_NAME) ;
+//
+//			try( Connection con = ds.getConnection()){
+//				
+//				Statement comando = con.createStatement() ;
+//				ResultSet resultado = comando.executeQuery("SELECT COUNT(*) FROM CLIENTE") ;
+//				
+//				resultado.next() ;
+//				System.out.println("Numero de cliente: " + resultado.getInt(1));
+//				
+//	
+//			} catch (SQLException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
+			
+			
+			
+			
+			
+			
+			
+			
 			
 		}
 		catch (NamingException ex) {
