@@ -1,0 +1,76 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.wpsnetwork</groupId>
+  <artifactId>Hibernate</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>Hibernate</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <hibernate.version>5.1.0.Final</hibernate.version>
+    <oracle.driver.version>12.1.0</oracle.driver.version>
+    <java.version>1.8</java.version>
+    <maven.compiler.version>3.5.1</maven.compiler.version>
+    <junit.version>4.12</junit.version>
+    
+  </properties>
+
+  <dependencies>
+
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>${junit.version}</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+    	<groupId>com.oracle</groupId>
+    	<artifactId>ojdbc7</artifactId>
+    	<version>${oracle.driver.version}</version>
+    </dependency>
+    
+	<dependency>
+	    <groupId>org.hibernate</groupId>
+	    <artifactId>hibernate-core</artifactId>
+	    <version>${hibernate.version}</version>
+	</dependency>    
+
+	<dependency>
+	    <groupId>org.hibernate</groupId>
+	    <artifactId>hibernate-java8</artifactId>
+	    <version>${hibernate.version}</version>
+	</dependency>    
+
+  </dependencies>
+
+  <repositories>
+
+  	<repository>
+  		<id>repositorio.jboss.org</id>
+  		<name>Hibernate</name>
+  		<url>https://repository.jboss.org/nexus/content/repositories/public</url>
+  	</repository>
+
+  </repositories>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.moven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>${maven.compiler.version}</version>
+        <configuration>
+          <source>${java.version}</source>
+          <target>${java.version}</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>

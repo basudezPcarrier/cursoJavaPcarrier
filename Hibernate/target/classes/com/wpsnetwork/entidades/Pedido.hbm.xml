@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 07-mar-2016 12:11:42 by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.wpsnetwork.entidades.Pedido" table="PEDIDO">
+        <id name="id" type="int">
+            <column name="ID" precision="5" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="cliente" class="com.wpsnetwork.entidades.Cliente" fetch="select">
+            <column name="IDCLIENTE" precision="5" scale="0" not-null="true" />
+        </many-to-one>
+        <property name="fecha" type="java.time.LocalDate">
+            <column name="FECHA" length="7" not-null="true" />
+        </property>
+        <property name="info" type="string">
+            <column name="INFO" length="100" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

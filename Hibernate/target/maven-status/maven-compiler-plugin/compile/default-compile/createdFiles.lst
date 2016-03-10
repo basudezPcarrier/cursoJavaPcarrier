@@ -1,0 +1,5 @@
+com\wpsnetwork\Hibernate\App.class
+com\wpsnetwork\entidades\Cliente.class
+com\wpsnetwork\consola\Main.class
+com\wpsnetwork\entidades\Pedido.class
+com\wpsnetwork\consola\HibernateUtil.class

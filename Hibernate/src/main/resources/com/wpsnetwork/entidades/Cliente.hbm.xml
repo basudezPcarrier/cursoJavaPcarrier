@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 07-mar-2016 12:11:42 by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.wpsnetwork.entidades.Cliente" table="CLIENTE">
+        <id name="id" type="int">
+            <column name="ID" precision="5" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <property name="nombre" type="string">
+            <column name="NOMBRE" length="100" not-null="true" />
+        </property>
+        <set name="pedidos" table="PEDIDO" inverse="true" lazy="true" fetch="select" cascade="persist,delete">
+            <key>
+                <column name="IDCLIENTE" precision="5" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="com.wpsnetwork.entidades.Pedido" />
+        </set>
+    </class>
+</hibernate-mapping>
