@@ -1,0 +1,117 @@
+<!-- comentario en HTML o XML -->
+<!DOCTYPE html>
+<html>
+	<!-- comentario dentro del XML-->
+	<head>
+		<meta charset="UTF-8"> <!-- hemos cambiado del un ISO-algo al UTF-8 para poder poner acentos-->
+		<title>Título personalizado</title>
+		
+		
+		<style>
+
+			
+			.dato{
+				background-color: gray;
+			}
+
+			input , div {
+				background-color: lime;
+			}
+			
+			input [type=submit]{
+				background-color: olive;
+			}
+			
+			#cabecera {
+				background-color: fuchsia;
+				border: gray inset inset;
+			}
+			
+			input:focus{
+				margin-left: 5px ;
+			}
+			input:VISITED{
+				background-color: red ;
+			}
+			
+		</style>
+		
+		
+		
+		
+	</head>
+	<!-- aqui va la pag web que verá el usuario-->
+	<body>
+		<div>Formulario</div>
+		<!-- el action del form es el destino, donde se va a mandar el resultado del formulario -->
+		<form action="receptorDatos.jsp" method="get">
+
+			<fieldset>
+				<legend id="cabecera"> 
+					Titulo del fieldset
+				</legend>
+				
+				<label>Nombre</label>
+				<input type="text" class="dato" name="nombre" value="" required pattern="[A-Z].*"/>
+				
+				<br/>
+				
+				<label>Altura</label>
+				<input type="number" class="dato" name="altura" value="" min="1" max="2.5" , step=".1"/>
+			
+				<br/>
+				
+				<label>Fecha Nacimiento</label>
+				<input type="date" class="dato" name="fnacimiento" value=""/>
+			
+			</fieldset>
+		
+			<!-- cuando una etiqueta se abre y se cierra a ella misma, se pone el / al final y no hace falta cerrarla expresamente -->
+			<input type="submit" name="Enviar" value="Enviar formulario" />
+			<input type="reset" name="Borrar" value="Limpiar" />
+			
+			
+			<select name="opcionLista" multiple="multiple">
+				<option value 1>Valor 1</option> 
+				<option value 2>Valor 2</option> 
+				<option value 3>Valor 4</option> 
+				<option value 4>Valor 5</option> 
+				<option value 5>Valor 5</option> 
+			</select>
+			
+			<input type="checkbox" name="opcionCheck" value="opcion1">Opcion 1 de check<input/> <br/> 
+			<input type="checkbox" name="opcionCheck" value="opcion2">Opcion 2 de check<input/> <br/>
+			<input type="checkbox" name="opcionCheck" value="opcion3">Opcion 3 de check<input/> <br/> 
+			
+			<input type="radio" name="opcionRadio" value="opcion1">Opcion 1 de radio<input/> <br/> 
+			<input type="radio" name="opcionRadio" value="opcion2">Opcion 2 de radio<input/> <br/>
+			<input type="radio" name="opcionRadio" value="opcion3">Opcion 3 de radio<input/> <br/>
+			
+		</form>
+	
+		<header>Cabecera</header>
+		<header>pie de pagina</header>
+							
+		<nav>
+			<a href="http://www.google.es"> Google </a>
+			<a href="http://www.bing.es"> Bing </a>
+		
+		</nav>
+		
+		
+		<section>
+			<article>Articulo 1</article>
+			<article>otro mas</article>
+			<article>
+				<div>Meto un div en un articulo</div>
+			</article>
+		</section>	
+		
+		Un texto <mark>resaltado</mark> es lo que he hecho
+		
+		<figure>
+			<img alt="alternativa a la imagen" src="http://static.jsbin.com/images/dave.min.svg">
+			<figcaption>Titulo de la imagen</figcaption>
+		</figure>
+	</body>
+</html>
