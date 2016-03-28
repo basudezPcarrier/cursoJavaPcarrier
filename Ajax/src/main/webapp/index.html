@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Ejemplo Ajax</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+	</head>
+
+	<body>
+		
+		Dato: <input type="text" id="InputValor" value="" /><br>
+		Hora del servidor:		
+		<div id="horaDiv"></div>
+		
+		<input type="button" value="Inicia" onClick="iniciar()" /> 
+		<input type="button" value="Para" onClick="parar()" /> 
+		
+		<script>
+
+			function actualizarHora(){
+				/*
+				$.get("./hora.jsp",null,function(dato){
+					$("#horaDiv")[0].innerHTML = dato  
+					});
+				*/
+
+				// comentamos la parte de arriba del get, y lo vamos a hacer con Ajax a través de 
+				// un formulario
+				
+				var miValor = $("#InputValor").val() ;
+
+				var solicitud = $.ajax(
+										"./hora.jsp",
+										{
+											type : "post",
+											data : "este es el valor que recibo="+miValor
+										}
+										) ; 
+
+				solicitud.setRequestHeader("Content-type","application/x-www-form-url-encoded");
+				solicitud.success(function (dato){
+					$("#horaDiv")[0].innerHTML = dato  
+				} );
+				
+			}
+
+			var codigo = "" ;
+			
+			function iniciar(){
+				codigo = window.setInterval("actualizarHora()", 1000) ;
+			}
+			
+			function parar(){
+				window.clearInterval(codigo) ;
+			}
+			
+
+			/*
+			con #horaDiv esta buscando el objeto horaDiv --> devuelve un array...hay que quedarse con el primero objeto [0]
+			con innetHTML le estamos cambiando el HTML que contiene ese objeto  
+			*/	
+
+		</script>
+		
+	</body>
+
+</html>
