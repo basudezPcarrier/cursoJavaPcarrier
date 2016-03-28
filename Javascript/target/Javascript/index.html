@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Prueba de Javascript</title>
+		<script src="js/libreria.js"></script>
+	</head>
+
+	<body>
+
+		<script type="text/javascript">
+			// comentario de Javascript de una linea
+			/* comentario de Javascript de mas de una linea
+			*/
+
+			alert("inicio") ;
+
+
+
+	var variable = 2 ; // se declara con var + nombre de la variable, no se le pone tipo
+	variable = "mi cadena" ; // cambio el tipo de la variable a texto sin hacer nada, solo una asignacion
+
+	var array = {} ; // array vacio
+	var diasSemana = {"lunes", "martes", "miercoles", "jueves", "viernes"} ;
+
+	alert("despues dias semana") ;
+	
+	// los arrays es como un mapa, el indice puede ser numerico o texto
+	array[3] = 5 ;
+	array["Pepito"] = 8;
+
+	alert( array[3] ) ;
+
+	array.push(120) ;
+
+	alert("antes var persona") ;
+
+	var persona = {} ; // declaro un objeto persona
+
+	persona.nombre = "Juan" ; // declaracion de los atributos del objeto
+	persona.edad = 12 ;
+	persona.getEdad = function (){ // funcion anonima de la clase
+		return edad ;
+	} ;
+
+	// metodo constructor del objeto
+	function Persona( nombre , edad){ 
+		this.nombre = nombre ;
+		this.edad = edad ;
+	} ;  
+
+	var p1 = new Persona( "María" , 30 ) ;
+	alert(p1.nombre) ;
+
+	Persona.propotype.diHola = function(){
+		alert("hola, soy " + this.nombre ) ;
+	}
+
+	p1.diHola() ;
+ 
+	
+ 		alert(suma(3,5));
+				
+		</script>
+		
+
+	</body>
+</html>
