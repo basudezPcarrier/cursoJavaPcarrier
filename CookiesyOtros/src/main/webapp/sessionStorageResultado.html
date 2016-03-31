@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Resultado de la suma</title>
+	</head>
+	<body onload="leerResultado()">
+		
+		<label>Resultado:</label> <div id="res"></div>
+		
+		<form action="./receptorDatos" method="post">
+
+			<input type="hidden" name="suma" value=""/>
+			<input type="submit" value="Enviar el resultado al servidor"/>
+		
+		</form>
+		
+		<input type="button" value="Enviar por Ajax" onclick="enviar()"/>
+			
+		<script type="text/javascript">
+			function leerResultado(){
+				var suma = sessionStorage["suma"] ;
+
+				document.getElementById("res").innerHTML = suma ;
+				document.getElementsByName("suma")[0].value = suma ; 
+			}
+
+
+			// para utilizarlo, tenemos que modidicar el servlet ya que no llega como parametro la suima sino como dato del zservbidor
+			function enviar(){
+
+				$.ajax( 
+						"./receptorDatos",
+						{
+							type: "post",
+							data: sessionStorage["suma"]
+						}
+				) 
+				// si ha ido bien...qué hacemos...
+				.done( function (respuesta) {
+					alert("datos enviados ok") ;
+				})
+				// si ha ido mal...qué hacemos...
+				.fail ( function (respuesta) {
+					alert("Ha fallado el envio")
+				})
+				
+				;
+				
+			}
+		</script>
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+		
+	</body>
+</html>

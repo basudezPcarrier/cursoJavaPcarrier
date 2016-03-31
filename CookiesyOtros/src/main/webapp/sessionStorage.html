@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Prueba almacenamiento local: Session Storage</title>
+	</head>
+	<body>
+	
+		<fieldset legend="Introducir dos números para sumar">
+
+			<div>
+				<label for="o1">Operando 1</label>
+				<input type="number" id="o1"/>
+			</div>
+
+			<div>
+				<label for="o2">Operando 2</label>
+				<input type="number" id="o2"/>
+			</div>
+			
+			<input type="button" value="Sumar" onclick="sumar('o1','o2','resultado')"/>
+			
+		</fieldset>
+	
+		<script type="text/javascript">
+
+			function sumar(id1 , id2) {
+				var operando1 = Number ( document.getElementById( id1 ).value ) ; // en id1 e id2, recibiremos el o1 y el o2
+				var operando2 = Number ( document.getElementById( id2 ).value ) ;
+
+				// miramos si tenemos session storage, y si lo tenemos, le añadimos el valor que queremos (es una especie de mapa)
+				
+				if ( sessionStorage ) {
+					sessionStorage["suma"] = operando1 + operando2 ;
+					window.location.href="sessionStorageResultado.html" ;
+				}
+				else alert("No hay soporte de almacenamiento local storage") ;
+				
+			}
+		</script>
+			
+	</body>
+</html>
