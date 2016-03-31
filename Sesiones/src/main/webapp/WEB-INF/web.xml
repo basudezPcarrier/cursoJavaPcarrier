@@ -4,6 +4,7 @@
 	      http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
 	      version="3.0">
   <display-name>Archetype Created Web Application</display-name>
+ 
   <servlet>
   	<servlet-name>AlmacenarNombre</servlet-name>
   	<servlet-class>com.wpsnetwork.servlets.AlmacenarNombre</servlet-class>
@@ -20,4 +21,5 @@
   	<servlet-name>ObtenerNombre</servlet-name>
   	<url-pattern>/ObtenerNombre</url-pattern>
   </servlet-mapping>
+
 </web-app>
