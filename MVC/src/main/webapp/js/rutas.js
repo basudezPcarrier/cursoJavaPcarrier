@@ -27,3 +27,6 @@ AppCatMoviles.config(['$routeProvider' , function($routeProvider){
 		})
 
 }]);
+
+
+var app = angular.module('myApp', ['ngGrid']);
