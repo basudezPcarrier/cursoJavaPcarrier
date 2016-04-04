@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="appCatMoviles">
+	<head>
+		<meta charset="UTF-8">
+		<title>Proyecto Ejemplo MVC</title>
+	</head>
+
+<!-- <body ng-controller="ControladorListadoMoviles"> antes teniamos eso
+pero al hacelro con el nr-route-->
+	
+	<body>
+		
+		<div>Testeo de suma: {{1+2}}</div>		
+		<div>{{nombreTienda}}</div>
+		<div></div>		
+		
+		<!-- indicar la vista hay que ponerle el ng-view -->
+		<div ng-view></div>
+		
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-route.min.js"></script>
+		<script src="js/rutas.js"></script>
+		<script src="js/controladores.js"></script>
+		
+	</body>
+</html>

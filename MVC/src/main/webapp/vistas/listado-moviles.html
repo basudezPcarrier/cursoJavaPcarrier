@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Listado de moviles</title>
+	</head>
+	<body>
+
+		<div>
+			<ul>
+				<!-- el ng-repeat genera un li por cada elemento -->
+				<li ng-repeat="movil in moviles" > 
+					
+					<a href="#/moviles/{{movil.id}}">{{movil.nombre}}</a>
+					<p>{{movil.descripcion}}</p>
+					<p>{{movil.edad}}</p>
+					
+				</li>
+			
+			</ul>
+		</div>
+	
+	</body>
+</html>
