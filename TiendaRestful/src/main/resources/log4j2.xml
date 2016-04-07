@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Configuration>
+
+	<Appenders>
+		<Console name="STDOUT" target="SYSTEM_OUT">
+			<PatternLayout pattern="%d %-5p [%t] %C{2} (%F:%L) (Método: %M) - %m%n" />
+		</Console>
+	</Appenders>
+		
+	
+	<Loggers>
+		<Logger name="org.hibernate" level="error">	
+			<!-- Toda la info de hibernate -->
+			<AppenderRef ref="STDOUT" />
+		</Logger>
+		<Logger name="org.hibernate.SQL" level="info">	
+			<!-- Comandos enviados a la BBDD -->
+			<AppenderRef ref="STDOUT" />
+		</Logger>
+		<Logger name="org.hibernate.type.descriptor.sql" level="trace" additivity="false">	
+			<!-- Todos los parámetros pasados/ obtenidos del JDBC -->
+			<AppenderRef ref="STDOUT" />
+		</Logger>
+		<Root level="error">
+			<AppenderRef ref="STDOUT" />
+		</Root>
+	</Loggers>
+</Configuration>

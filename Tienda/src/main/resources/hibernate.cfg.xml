@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.bytecode.use_reflection_optimizer">false</property>
+        <property name="hibernate.connection.driver_class">oracle.jdbc.OracleDriver</property>
+        <property name="hibernate.connection.password">usuario</property>
+        <property name="hibernate.connection.url">jdbc:oracle:thin:@localhost:1521:pcarrier</property>
+        <property name="hibernate.connection.username">wps</property>
+        <property name="hibernate.default_schema">WPS</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</property>
+        <property name="hibernate.search.autoregister_listeners">false</property>
+        
+        <!-- Pool de conexiones -->
+        <property name="hibernate.c3p0.min_size">5</property>
+  		<property name="hibernate.c3p0.max_size">20</property>
+  		<property name="hibernate.c3p0.timeout">300</property>
+  		<property name="hibernate.c3p0.max_statements">50</property>
+  		<property name="hibernate.c3p0.idle_test_period">3000</property>
+  		
+        <!-- Permite usar los id autogenerados -->
+        <property name="hibernate.jdbc.use_get_generated_keys">true</property>
+        
+        <!-- Echo all executed SQL to stdout -->
+        <property name="show_sql">true</property>
+        <property name="format_sql">true</property>
+        
+        <mapping class="com.wpsnetwork.dao.entidades.Direccion" />
+        <mapping class="com.wpsnetwork.dao.entidades.Cliente" />
+        <mapping class="com.wpsnetwork.dao.entidades.ProductoPedido" />
+        <mapping class="com.wpsnetwork.dao.entidades.Producto" />
+        <mapping class="com.wpsnetwork.dao.entidades.Pedido" />
+        <mapping class="com.wpsnetwork.dao.entidades.Proveedor" />
+    </session-factory>
+</hibernate-configuration>
