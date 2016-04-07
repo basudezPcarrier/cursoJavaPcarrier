@@ -25,12 +25,12 @@ import entidades.Temperatura;
  * */
 
 // path relativa a los restfull
-@Path("/temperaturaXML")
-public class TemperaturaXML {
+@Path("/temperaturaJSON")
+public class TemperaturaJSON {
 	
 	private final String miTexto = "cadena por defecto" ;
 	
-	/* OJO!! al probarlo hay que poner la url http://localhost:8080/RestFull/restfull/temperaturaXML
+	/* OJO!! al probarlo hay que poner la url http://localhost:8080/RestFull/restfull/temperaturaJSON
 	 * 
 	 * 		no recuerdo por qué XD....creo que 
 	 * 
@@ -39,7 +39,7 @@ public class TemperaturaXML {
 	
 	
 	@GET // indica el metodo
-	@Produces(MediaType.APPLICATION_XML)  // la respuesta: dice lo que va a devolver
+	@Produces(MediaType.APPLICATION_JSON)  // la respuesta: dice lo que va a devolver
 	public Temperatura convertirCaF(){
 		double farenheit ;
 		double celsius = 36.8 ;
@@ -57,7 +57,7 @@ public class TemperaturaXML {
 	// lo que hará entonces es "/temperaturaXML" + "celsius"
 	
 	@GET // indica el metodo
-	@Produces(MediaType.APPLICATION_XML)  // la respuesta: dice lo que va a devolver
+	@Produces(MediaType.APPLICATION_JSON)  // la respuesta: dice lo que va a devolver
 	@Path("{celsius}")
 	public Temperatura convertirCaF( @PathParam("celsius") double c ){
 		double farenheit ;
@@ -70,7 +70,7 @@ public class TemperaturaXML {
 	}
 		
 	@GET // indica el metodo
-	@Produces(MediaType.APPLICATION_XML)  // la respuesta: dice lo que va a devolver
+	@Produces(MediaType.APPLICATION_JSON)  // la respuesta: dice lo que va a devolver
 	@Path("{celsius}/{cadena}")
 	public Temperatura convertirCaF( @PathParam("celsius") double c , @PathParam("cadena") String texto){
 		double farenheit ;
